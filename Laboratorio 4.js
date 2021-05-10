@@ -4,7 +4,7 @@ const prompt = require('prompt-sync')({sigint: true});
 
 //Prints current value of counter
 function view(counter){
-return (`\nCount: ${counter}\nAdd(+)/Substract(-)\n`);
+return (`\nCount: ${counter}\nAdd(+)/Substract(-)/"q" to quit\n`);
 }
 
 // Updates counter value depending on input
@@ -17,6 +17,12 @@ return (counter+1);
 else if (msg === "-"){
 return (counter-1);
 }
+
+//q to quit
+else if (msg === "q"){
+    process.exit(0);
+    }
+
 //Invalid input, nothing happens to counter value
 else{
 return counter;
@@ -29,7 +35,6 @@ while (true){
 console.clear();
 const currentView = view(counter);
 console.log(`\n${currentView}\nWhat will you do?\n`);
-//prompt(`\n${currentView}\nWhat will you do?\n);
 const msg = prompt();
 counter = update(msg,counter);
 }
