@@ -1,7 +1,5 @@
 const prompt = require('prompt-sync')({sigint: true});
  
-//const name = prompt('What is your name?');
-
 //Prints current value of counter
 function view(counter){
 return (`\nCount: ${counter}\nAdd(+)/Substract(-)/"q" to quit\n`);
